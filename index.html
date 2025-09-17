@@ -1,95 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Take Some Time to Relax</title>
-  <style>
-    body {
-
-      font-family: 'Times New Roman', Times, serif, sans-serif;
-      background: #f5f5f5;
-      margin: 0;
-      padding: 0;
-      text-align: center;
-    }
-
-    /* Banner image */
-    .banner img {
-      width: 100%;
-      max-height: 300px;
-      object-fit: cover;
-    }
-
-    /* Grid for the four columns */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-      padding: 30px;
-    }
-
-    .card {
-      background: rgb(243, 230, 230);
-      border-radius: 15px;
-      padding: 20px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      transition: transform 0.3s;
-    }
-
-    .card img {
-      width: 100%;
-      border-radius: 12px;
-      cursor: pointer;
-      transition: transform 0.3s;
-    }
-    
-    .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(255, 94, 212, 0.6); /* soft pink glow */
-  transition: all 0.3s ease;
-}
-
-    .card img:hover {
-      transform: scale(1.1);
-    }
-
-    /* Timer styling */
-    .timer {
-      margin-top: 15px;
-    }
-    .timer select, .timer button {
-      margin: 5px;
-      padding: 8px 12px;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-    }
-
-    /* Affirmation box */
-    .affirmation {
-      margin-top: 15px;
-    }
-    .affirmation input {
-      padding: 8px;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-    }
-    .affirmation button {
-      padding: 8px 12px;
-      margin-left: 5px;
-      border: none;
-      border-radius: 8px;
-      background: #4CAF50;
-      color: white;
-      cursor: pointer;
-    }
-    .affirmation p {
-      margin-top: 10px;
-      font-weight: bold;
-      color: #444;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -110,7 +25,7 @@
 
     <!-- Column 2: Website + Timer -->
     <div class="card">
-      <a href="#" target="_blank">
+      <a href="#">
         <img src="Untitled_Artwork 2.jpg" alt="Make Tea">
       </a>
       <div class="timer">
@@ -128,7 +43,7 @@
       </div>
     </div>
 
-    <!-- Column 3: Another Link -->
+    <!-- Column 3: Video Link -->
     <div class="card">
       <a href="https://youtu.be/cxm0zdZDLeE?si=K4Kgw3RABJ8nWNS5" target="_blank">
          <img src="Yoga.jpg" alt="Try Yoga!">
@@ -147,59 +62,6 @@
 
   </div>
 
-  <script>
-    // Timer
-    let timer;
-    function startTimer() {
-      clearInterval(timer);
-      let minutes = document.getElementById("minutes").value;
-      let time = minutes * 60;
-      const display = document.getElementById("timeDisplay");
-
-      timer = setInterval(() => {
-        let min = Math.floor(time / 60);
-        let sec = time % 60;
-        display.textContent = `${min}:${sec < 10 ? "0" : ""}${sec}`;
-        time--;
-
-        if (time < 0) {
-          clearInterval(timer);
-          display.textContent = "Time’s up! ☕";
-        }
-      }, 1000);
-    }
-
-    // Affirmation
-    const affirmations = [
-      "You're doing enough.",
-      "You're amazing.",
-      "Take a nap and rest — you deserve it.",
-      "You're stronger than you think.",
-"It’s okay to take things slow.",
-"You’re worthy of love and care.",
-"Be gentle with yourself.",
-"You’re doing your best, and that’s enough.",
-"Your feelings are valid.",
-"Rest is productive too.",
-"You’ve already come so far.",
-"You don’t need to have it all figured out.",
-"You’re allowed to take a break.",
-"You make a difference.",
-"One step at a time is still progress.",
-"You are loved, just as you are.",
-"It’s okay to ask for help.",
-"You’re not alone in this.",
-"You’re more capable than you realize.",
-"Celebrate the small wins.",
-"It’s okay to say no.",
-"You matter."
-    ];
-
-    function giveAffirmation() {
-      const randomIndex = Math.floor(Math.random() * affirmations.length);
-      document.getElementById("affirmationOutput").textContent = affirmations[randomIndex];
-    }
-  </script>
-
+  <script src="script.js"></script>
 </body>
 </html>
